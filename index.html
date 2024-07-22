@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+  <header>
+    <div class="leftHeader">
+      <img src="images/icon-menu.svg" alt="" class="menuIcon">
+      <h1>sneakers</h1>
+      <nav class="navLinks">
+        <ul>
+          <img src="images/icon-close.svg" alt="" class="closeMenu">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="rightHeader">
+      <div class="numberOfItems"></div>
+      <img src="images/icon-cart.svg" alt="" id="navCartIcon">
+      <div class="cartItems">
+        <h4>Cart</h4>
+        <div class="addedItems">
+          <div class="emptyCart">
+            <p>your cart is empty</p>
+          </div>
+         <!-- <div class="item">
+            <img src="images/image-product-1-thumbnail.jpg" alt="">
+            <div class="nameAndPrice">
+              <p>Fall Limited Edition Sneakers</p>
+              <p><span class="price">$125.00  * </span><span id="quantinty"> 3 </span><span class="total">$375.00</span></p>
+            </div>
+            <img src="images/icon-delete.svg" alt="" class="deleteIcon">
+          </div> -->
+        </div>
+        <div class="checkoutButtonContainer">
+          <button id="checkoutBtn">Checkout</button>
+        </div>
+      </div>
+      <img src="images/image-avatar.png" alt="" id="userAvatar">
+    </div>
+  </header>
+  <section>
+    <div class="lightBoxGallery">
+      <div class="leftDiv">
+        <div class="productImageContainer">
+          <img src="images/icon-previous.svg" alt="" id="previous" class="nextAndPrevious">
+          <img src="images/icon-close.svg" alt="" class="closeGallery">
+          <img src="images/image-product-1.jpg" alt="" class="productImage" data-number="1">
+          <img src="images/image-product-2.jpg" alt="" class="productImage" data-number="2">
+          <img src="images/image-product-3.jpg" alt="" class="productImage" data-number="3">
+          <img src="images/image-product-4.jpg" alt="" class="productImage" data-number="4">
+          <img src="images/icon-next.svg" alt="" id="next" class="nextAndPrevious">
+        </div>
+        <div class="otherImages">
+          <div class="thumbnailDiv">
+            <img src="images/image-product-1-thumbnail.jpg" class="thumbnail" data-number="1">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+          <div class="thumbnailDiv">
+            <img src="images/image-product-2-thumbnail.jpg" class="thumbnail" data-number="2">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+          <div class="thumbnailDiv">
+           <img src="images/image-product-3-thumbnail.jpg" class="thumbnail" data-number="3">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+          <div class="thumbnailDiv">
+           <img src="images/image-product-4-thumbnail.jpg" class="thumbnail" data-number="4">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="leftDiv" id="leftDiv">
+      <div class="productImageDiv">
+        <img src="images/icon-previous.svg" alt="" id="previous" class="nextAndPrevious">
+        <img src="images/image-product-1.jpg" alt="" class="productImage" data-number="1">
+        <img src="images/image-product-2.jpg" alt="" class="productImage" data-number="2">
+        <img src="images/image-product-3.jpg" alt="" class="productImage" data-number="3">
+        <img src="images/image-product-4.jpg" alt="" class="productImage" data-number="4">
+        <img src="images/icon-next.svg" alt="" id="next" class="nextAndPrevious">
+      </div>
+       <div class="otherImages">
+          <div class="thumbnailDiv">
+            <img src="images/image-product-1-thumbnail.jpg" class="thumbnail" data-number="1">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+          <div class="thumbnailDiv">
+            <img src="images/image-product-2-thumbnail.jpg" class="thumbnail" data-number="2">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+          <div class="thumbnailDiv">
+           <img src="images/image-product-3-thumbnail.jpg" class="thumbnail" data-number="3">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+          <div class="thumbnailDiv">
+           <img src="images/image-product-4-thumbnail.jpg" class="thumbnail" data-number="4">
+            <div class="activeOverlay"></div>
+            <div class="hoverOverlay"></div>
+          </div>
+        </div>
+    </div>
+    <div class="rightDiv">
+      <h3>SNEAKER COMPANY</h3>
+      <h1>Fall Limited Edition Sneakers</h1>
+      <p class="homeText">These low-profile sneakers are your perfect casual wear companion. Featuring a
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+        <div class="pricesDiv">
+          <h2>$<span id="itemPrice">125.00</span><span class="percentage">50%</span></h2>
+          <p class="totalPrice">$250.00</p>
+        </div>
+
+        <div class="addToCartDiv">
+          <div class="qty">
+            <img src="images/icon-minus.svg" class="subtraction" id="subtract">
+            <span class="quantity">0</span>
+            <img src="images/icon-plus.svg" class="addition" id="add">
+          </div>
+          <button class="addToCartBtn">
+            <img src="images/icon-cart.svg" alt="">
+            <p>Add to cart</p>
+          </button>
+        </div>
+    </div>
+  </section>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">your name</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+:root{
+    --Orange: hsl(26, 100%, 55%);
+    --Pale-orange: hsl(25, 91%, 79%);
+    --Very-dark-blue: hsl(220, 13%, 13%);
+    --Dark-grayish-blue: hsl(219, 9%, 45%);
+    --Grayish-blue: hsl(220, 14%, 75%);
+    --Light-grayish-blue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: rgba(0, 0, 0, 75%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'open sans';
+    max-width: 1300px;
+    margin: 0 auto;
+}
+body.no-scroll{
+    overflow: hidden;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 150px;
+    border-bottom: 2px solid var(--Light-grayish-blue);
+    max-width: 1300px;
+}
+.leftHeader{
+    display: flex;
+    align-items: center;
+}
+.menuIcon{
+    display: none;
+}
+.closeMenu{
+    display: none;
+}
+
+header h1{
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+}
+.navLinks{
+    margin-left: 40px;
+}
+.navLinks ul{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    height: 100%;
+}
+.navLinks ul a{
+    padding-bottom: 33px;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--Grayish-blue);
+}
+.navLinks ul a:hover{
+    border-bottom: 3px solid var(--Orange);
+    color: var(--Black);
+    transition: 0.3s ease-in-out;
+}
+.rightHeader{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.numberOfItems{
+    background-color: var(--Orange);
+    color: var(--White);
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    position: relative;
+    top: -10px;
+    left: 55px;
+    z-index: 1;
+}
+.rightHeader img{
+    height: 22px;
+    width: 22px;
+    color: var(--Black);
+    cursor: pointer;
+}
+.rightHeader img:active{
+    transform: scale(1.1);
+}
+.rightHeader img:nth-child(4){
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--Orange);
+    cursor: pointer;
+}
+.emptyCart{
+    width: 100%;
+    height: 140px;
+    align-items: center;
+    justify-content: center;
+}
+.emptyCart p{
+    color: var(--Dark-grayish-blue);
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.cartItems{
+    position: absolute;
+    top: 75px;
+    right: 10%;
+    width: 325px;
+    box-shadow: 0 10px 7px 5px var(--Black);
+    background-color: var(--White);
+    display: none;
+}
+.cartItems.active{
+    display: block;
+}
+.cartItems h4{
+    padding: 15px;
+    font-weight: 900;
+    border-bottom: 2px solid var(--Grayish-blue);
+}
+.addedItems{
+    padding: 15px;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.item img{
+    border-radius: 3px;
+}
+.nameAndPrice{
+    gap: 10px;
+}
+.nameAndPrice p{
+    color: var(--Dark-grayish-blue);
+}
+.nameAndPrice p:nth-child(2){
+    margin-top: 6px;
+}
+.total{
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--Black);
+    margin-left: 15px;
+}
+.itemPrice{
+    margin-left: 5px;
+}
+.item img:nth-child(1){
+    width: 60px;
+    height: 60px;
+}
+.checkoutButtonContainer{
+    padding: 0 15px 10px 15px;
+}
+.checkoutButtonContainer button{
+    width: 100%;
+    background-color: var(--Orange);
+    color: white;
+    font-weight: 700;
+    padding: 15px 0;
+    border: none;
+    border-radius: 6px;
+    display: none;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 230px 30px 230px;
+    max-width: 1300px;
+}
+.lightBoxGallery{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 90%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+.closeGallery{
+    position: absolute;
+    right: -13px;
+    top: -30px;
+    transform: translate(-100%, 0);
+    cursor: pointer;
+}
+.lightBoxGallery .leftDiv{
+    width: 400px;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.productImageContainer{
+    display: flex;
+}
+.lightBoxGallery .productImage{
+    height: 400px;
+    width: 400px;
+}
+.productImageContainer{
+    position: relative;
+}
+.nextAndPrevious{
+    background-color: var(--White);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.nextAndPrevious:first-child{
+    left: -15px;
+}
+.nextAndPrevious:last-child{
+    right: -15px;
+}
+.nextAndPrevious:hover{
+    color: var(--Orange);
+}
+.lightBoxGallery .otherImages{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+.productImage{
+    height: 350px;
+    width: 350px;
+    border-radius: 15px;
+    display: none;
+}
+.thumbnailDiv{
+    position: relative;
+    border-radius: 15px;
+}
+.thumbnailDiv:hover .hoverOverlay{
+    display: block;
+}
+#leftDiv .nextAndPrevious{
+    display: none;
+}
+.otherImages{
+    margin-top: 20px;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+.otherImages img{
+    height: 70px;
+    width: 70px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.otherImages img:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.activeOverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    height: 70px;
+    width: 70px;
+    display: none;
+}
+.activeOverlay.active{
+    display: block;
+}
+.hoverOverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    height: 70px;
+    width: 70px;
+    display: none;
+}
+.rightDiv{
+    width: 400px;
+    padding: 30px 0 30px 0;
+}
+.rightDiv h3{
+    color: var(--Orange);
+}
+.rightDiv h1{
+    margin-top: 15px;
+    font-size: 45px;
+}
+.homeText{
+    font-size: 16px;
+    margin-top: 30px;
+    color: var(--Dark-grayish-blue);
+}
+.rightDiv h2{
+    margin-top: 20px;
+}
+.percentage{
+    color: var(--Orange);
+    background-color: var(--Pale-orange);
+    margin-left: 10px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.totalPrice{
+    margin-top: 15px;
+    color: var(--Dark-grayish-blue);
+}
+.addToCartDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 10px;
+}
+.addToCartDiv button img{
+    height: 16px;
+    width: 16px;
+    color: var(--White);
+}
+.qty{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+    gap: 35px;
+    background-color: var(--Light-grayish-blue);
+}
+.qty img{
+    cursor: pointer;
+}
+.quantity{
+    font-size: 18px;
+    font-weight: 700;
+}
+.addToCartBtn{
+    display: flex;
+    padding: 13px 80px;
+    gap: 10px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--Orange);
+    color: var(--White);
+    cursor: pointer;
+}
+.addToCartBtn:hover{
+    background-color: var(--Pale-orange);
+}
+.attribution{
+    margin-top: 20px;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 16px;
+    background-color: var(--Pale-orange);
+}
+
+@media (max-width:1200px) {
+    header{
+        padding: 15px 30px;
+    }
+    section{
+        padding: 50px 15% 30px 15%;
+        gap: 30px;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width:1067px) {
+    .addToCartBtn{
+        padding: 13px 50px;
+    }
+    .navLinks ul a{
+        padding-bottom: 29px;
+    }
+    .cartItems{
+        right: 20px;
+    }
+}
+
+@media (max-width:1019px) {
+    .rightDiv{
+        padding: 10px 0;
+    }
+    .rightDiv h1{
+        font-size: 35px;
+    }
+    .productImage{
+        width: 300px;
+        height: 300px;
+    }
+    .leftDiv .otherImages{
+        width: 300px;
+    }
+    .leftDiv .thumbnail,
+    .activeOverlay,
+    .hoverOverlay{
+        width: 60px;
+        height: 60px;
+    }
+    .lightBoxGallery .productImage{
+        width: 330px;
+        height: 330px;
+    }
+    .closeGallery{
+        right: -15px;
+    }
+}
+
+@media (max-width:943px) {
+    section{
+        padding: 30px 70px;
+    }
+    .addToCartDiv{
+        gap: 20px;
+        justify-content: unset;
+    }
+    .qty{
+        gap: 20px;
+    }
+}
+@media (max-width:783px) {
+    .addToCartBtn{
+        padding: 13px 40px;
+    }
+}
+
+@media (max-width:769px){
+    .navLinks{
+        display: none;
+    }
+    .menuIcon{
+        display: block;
+    }
+    .leftHeader h1{
+        margin-left: 30px;
+    }
+    .closeMenu{
+        margin-bottom: 25px;
+        display: block;
+        height: 20px;
+        width: 20px;
+    }
+    .cartItems{
+        right: 15px;
+        z-index: 1;
+    }
+    .rightDiv{
+        width: 100%;
+        padding: 20px;
+    }
+    .productImageDiv{
+        display: flex;
+        position: relative;
+        max-height: 400px;
+        height: 70vw;
+
+    }
+    .productImage{
+      height: 100%;
+      object-fit: unset;
+    }
+    #leftDiv .nextAndPrevious{
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+    .leftDiv .nextAndPrevious:first-child{
+        left: 10px;
+    }
+    .leftDiv .nextAndPrevious:last-child{
+        right: 10px;
+    }
+    .pricesDiv h2,
+    .itemPrice,
+    .percentage,
+    .totalPrice{
+        padding: 0;
+        margin: 0;
+    }
+    .percentage{
+        margin-left: 15px;
+        padding: 3px;
+        border-radius: 3px;
+    }
+    .pricesDiv{
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        padding: 0;
+        margin-top: 10px;
+    }
+    section{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 30px 30px 30px;
+        gap: 0;
+    }
+    .leftDiv .otherImages{
+        display: none;
+    }
+    .leftDiv{
+        width: 100%;
+    }
+    .leftDiv .productImage{
+        width: 100%;
+        object-fit: cover;
+        border-radius: unset;
+    }
+    .addToCartDiv{
+        flex-direction: column;
+    }
+    .qty,
+    .addToCartBtn{
+        width: 100%;
+    }
+    .qty{
+        justify-content: space-between;
+    }
+    .addToCartBtn{
+        justify-content: center;
+    }
+    .navLinks.active{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--Black);
+        width: 100vw;
+        height: 100%;
+        z-index: 2;
+        margin-left: unset;
+        display: block;
+    }
+    .navLinks ul{
+        display: flex;
+        gap: 20px;
+        padding: 30px 30px;
+        flex-direction: column;
+        background-color: var(--White);
+        width: 200px;
+        height: 100%;
+    }
+    .navLinks ul a{
+        color: var(--Black);
+        font-weight: 800;
+        padding: unset;
+    }
+    .navLinks ul a:hover{
+        border: unset;
+    }
+    .menuIcon,
+    .closeMenu{
+        cursor: pointer;
+    }
+}
+@media (max-width:650px) {
+    .lightBoxGallery .leftDiv{
+        width: 95%;
+        max-height: 500px;
+        height: 100vw;
+    }
+    .lightBoxGallery .productImage,
+    .lightBoxGallery .productImageContainer{
+        height: 100%;
+    }
+}
+@media (max-width:375px) {
+    header{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #navCartIcon{
+        width: 15px;
+        height: 15px;
+    }
+    #userAvatar{
+        height: 30px;
+        width: 30px;
+    }
+    section{
+        padding: 0;
+    }
+    .rightDiv{
+        padding: 15px;
+        margin-top: 0;
+    }
+    .pricesDiv{
+        justify-content: space-between;
+        gap: unset;
+    }
+    .cartItems{
+        right: unset;
+        left: 50%;
+        top: 65px;
+        transform: translateX(-50%);
+    }
+    .leftHeader h1{
+        font-size: 22px;
+    }
+    #navCartIcon{
+        width: 25px;
+        height: 25px;
+    }
+}
+@media (max-width: 340px){
+    .cartItems{
+        width: 100%;
+        right: unset;
+    }
+}
