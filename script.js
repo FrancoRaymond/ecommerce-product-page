@@ -119,7 +119,6 @@ addOrSubtract.forEach(btn => btn.addEventListener('click', function(){
 }));
 
 const addToCartBtn = document.querySelector('.addToCartBtn')
-
 addToCartBtn.addEventListener('click', function(){
     addItemToCart()
     quantity.innerText = '0';
